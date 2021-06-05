@@ -98,8 +98,9 @@ class Visualizer():
     def plot_current_errors(self, errors, step):
         if self.tf_log:
             for tag, value in errors.items():
-                summary = self.tf.Summary(value=[self.tf.Summary.Value(tag=tag, simple_value=value)])
-                self.writer.add_summary(summary, step)
+                self.tf.summary.scalar(tag, value, step=step)
+                # summary = self.tf.Summary(value=[self.tf.Summary.Value(tag=tag, simple_value=value)])
+                # self.writer.add_summary(summary, step)
 
     # errors: same format as |errors| of plotCurrentErrors
     def print_current_errors(self, epoch, i, errors, t):

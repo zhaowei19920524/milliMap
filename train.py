@@ -96,7 +96,7 @@ if __name__ == '__main__':
                 visuals = OrderedDict([('input_label', util.tensor2label(data['label'][0], opt.label_nc)),
                                        ('synthesized_image', util.tensor2im(generated.data[0])),
                                        ('real_image', util.tensor2im(data['image'][0]))])
-                visualizer.display_current_results(visuals, epoch, total_steps)
+                # visualizer.display_current_results(visuals, epoch, total_steps)
 
             ### save latest model
             if total_steps % opt.save_latest_freq == save_delta:
